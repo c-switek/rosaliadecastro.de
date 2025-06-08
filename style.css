@@ -8,7 +8,8 @@ body {
     line-height: 1.6;
 }
 
-/* --- Header mit Hintergrundbild --- */
+/* --- Header mit Hintergrundbild --- */    
+}
 header {
     background-image: url('bilder/headerbild.jpg'); /* Bildpfad anpassen */
     background-size: cover;
@@ -21,8 +22,14 @@ header {
     color: white;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     text-align: center;
-}
 
+    /* Diese vier Zeilen fügen wir hinzu */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+}
 /* --- Titel im Header --- */
 header h1 {
     font-size: 2.8em;
