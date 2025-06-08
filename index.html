@@ -11,6 +11,7 @@
       padding: 0;
       background-color: #ffffff;
       line-height: 1.6;
+      font-size: 1em;
     }
 
     header {
@@ -23,13 +24,12 @@
       height: auto;
     }
 
-    /* Sticky horizontal navbar */
     nav {
-      background-color: #e6e6e6;
+      background-color: #000;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #333;
     }
 
     nav ul {
@@ -50,20 +50,20 @@
       display: block;
       padding: 1em;
       text-decoration: none;
-      color: #003366;
+      color: white;
       font-weight: bold;
       white-space: nowrap;
     }
 
-    nav ul li:hover {
-      background-color: #d4d4d4;
+    nav ul li a:hover,
+    nav ul li strong:hover {
+      color: #00cc66;
     }
 
-    /* Dropdown menu */
     nav ul li ul {
       display: none;
       position: absolute;
-      background-color: #f8f8f8;
+      background-color: #222;
       min-width: 200px;
       top: 100%;
       left: 0;
@@ -77,6 +77,15 @@
 
     nav ul li ul li {
       width: 100%;
+    }
+
+    nav ul li ul li a {
+      color: #fff;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: #333;
+      color: #00cc66;
     }
 
     main {
@@ -137,6 +146,46 @@
         box-shadow: none;
       }
     }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      flex: 1;
+      max-width: 280px;
+      font-size: 0.85em;
+      margin-right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 1em;
+    }
+
+    .sidebar h3 {
+      font-size: 1.1em;
+      color: #fff;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .sidebar ul li a:hover {
+      color: #00cc66;
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 3;
+    }
   </style>
 </head>
 <body>
@@ -191,21 +240,62 @@
   </ul>
 </nav>
 
-<main>
-  <p>Willkommen auf meiner Internetpräsenz <strong>rosaliadecastro.de!</strong></p>
+<div class="container">
+  <aside class="sidebar">
+    <h3>Letzte Beiträge</h3>
+    <ul>
+      <li><a href="#">Notizen zur deutschsprachigen Rezeption Rosalía de Castros in Deutschland</a></li>
+      <li><a href="#">Azorín und Rosalía de Castro</a></li>
+      <li><a href="#">María Xesús Lama veröffentlicht Rosalía de Castro Biographie</a></li>
+      <li><a href="#">Galicische Lieder auf Deutsch</a></li>
+      <li><a href="#">Rosalía de Castro im Werk von Camilo José Cela</a></li>
+    </ul>
 
-  <p>Diese Seite widmet sich dem Leben und Werk der galicischen Dichterin Rosalía de Castro (1837–1885).</p>
-  <p>Hier finden Sie Informationen zu ihrer Biographie, ihren Werken und ihrer Rezeption im deutschsprachigen Raum.</p>
+    <h3>Letzte Kommentare</h3>
+    <ul>
+      <li><a href="#">Adminioh bei Rosalía auf Deutsch</a></li>
+      <li><a href="#">Renate Söllner bei Rosalía auf Deutsch</a></li>
+    </ul>
 
-  <div style="float: right; margin-left: 20px; margin-bottom: 10px; width: 232px;">
-    <figure style="margin: 0;">
-      <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt" width="232" height="300" style="display: block; border: 1px solid #ccc;">
-      <figcaption style="font-size: 0.9em; color: #666; font-style: italic; text-align: right; margin-top: 5px;">
-        Rosalía de Castro: Bearbeitung nach dem Foto von Luis Sellier, wahrscheinlich um 1880 (PD). By Luis Sellier [Public domain], via Wikimedia Commons
-      </figcaption>
-    </figure>
-  </div>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="#">Oktober 2017</a></li>
+      <li><a href="#">September 2017</a></li>
+      <li><a href="#">Juli 2017</a></li>
+      <li><a href="#">November 2016</a></li>
+      <li><a href="#">Januar 2016</a></li>
+      <li><a href="#">Oktober 2015</a></li>
+    </ul>
 
+    <h3>Kategorien</h3>
+    <ul>
+      <li><a href="#">Allgemein</a></li>
+      <li><a href="#">Rosalía in deutschsprachiger Übersetzung</a></li>
+    </ul>
+
+    <h3>Meta</h3>
+    <ul>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Log in</a></li>
+      <li><a href="#">Beitrags-Feed (RSS)</a></li>
+      <li><a href="#">Kommentare als RSS</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <p>Willkommen auf meiner Internetpräsenz <strong>rosaliadecastro.de!</strong></p>
+    <p>Diese Seite widmet sich dem Leben und Werk der galicischen Dichterin Rosalía de Castro (1837–1885).</p>
+    <p>Hier finden Sie Informationen zu ihrer Biographie, ihren Werken und ihrer Rezeption im deutschsprachigen Raum.</p>
+
+    <div style="float: right; margin-left: 20px; margin-bottom: 10px; width: 232px;">
+      <figure style="margin: 0;">
+        <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt" width="232" height="300" style="display: block; border: 1px solid #ccc;">
+        <figcaption style="font-size: 0.9em; color: #666; font-style: italic; text-align: right; margin-top: 5px;">
+          Rosalía de Castro: Bearbeitung nach dem Foto von Luis Sellier, wahrscheinlich um 1880 (PD). By Luis Sellier [Public domain], via Wikimedia Commons
+        </figcaption>
+      </figure>
+    </div>
+    
   <p>Rosalía de Castro ist eine der faszinierendsten Gestalten der spanischen Literaturgeschichte, 
     die auch im deutschsprachigen Raum eine immer größere Bedeutung erlangt hat. 
     So kann erfreulicherweise festgestellt werden, dass es häufig die Pilger auf dem Jakobsweg 
@@ -229,14 +319,15 @@
   <p>Auf rosaliadecastro.de sollen die Besucher die Möglichkeit bekommen, in den entsprechenden Bereichen zu Rosalía de Castros 
     Leben und Schreiben eigene Kommentare oder auch Beiträge zu verfassen.</p>
 
-  <div class="search">
-    <form action="#" method="get">
-      <label for="search">Suche nach:</label><br />
-      <input type="text" id="search" name="search" />
-      <input type="submit" value="Suchen" />
-    </form>
-  </div>
-</main>
+    <div class="search">
+      <form action="#" method="get">
+        <label for="search">Suche nach:</label><br />
+        <input type="text" id="search" name="search" />
+        <input type="submit" value="Suchen" />
+      </form>
+    </div>
+  </main>
+</div>
 
 <footer>
   <p>&copy; 2025 rosaliadecastro.de</p>
