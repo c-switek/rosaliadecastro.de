@@ -1,27 +1,26 @@
 /* --- Basislayout & Schrift --- */
+
 body {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdfaf6; /* leichtes Elfenbein */
-    color: #2e2e2e; /* dunkles Grau */
-    line-height: 1.6;
-}
-header {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  line-height: 1.6;
+  font-size: 1em;
 }
 
 .banner-image {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* --- Navigation --- */
 nav {
-    background-color: #004d40; /* Dunkelgrün */
+  background-color: #004d40; /* Dunkelgrün */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
 }
 
 nav ul {
