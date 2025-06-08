@@ -9,7 +9,6 @@ body {
 }
 
 /* --- Header mit Hintergrundbild --- */    
-}
 header {
     background-image: url('bilder/headerbild.jpg'); /* Bildpfad anpassen */
     background-size: cover;
@@ -23,12 +22,11 @@ header {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     text-align: center;
 
-    /* Diese vier Zeilen fügen wir hinzu */
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
+    /* Anpassen der Breite */
+    width: 100%;
+    height: 250px; /* Optional: Kann nach Bedarf angepasst werden */
+    margin: 0; /* Verhindert zusätzliche Ränder */
+    padding: 0; /* Verhindert zusätzliche Polsterung */
 }
 /* --- Titel im Header --- */
 header h1 {
