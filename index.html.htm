@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rosalía de Castro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Sticky horizontal navbar */
+    nav {
+      background-color: #e6e6e6;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a,
+    nav ul li strong {
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav ul li:hover {
+      background-color: #d4d4d4;
+    }
+
+    /* Dropdown menu */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #f8f8f8;
+      min-width: 200px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      width: 100%;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .floating-img {
+      float: right;
+      margin: 0 0 10px 20px;
+      border: 1px solid #ccc;
+      width: 232px;
+      height: auto;
+    }
+
+    .image-description {
+      font-size: 0.9em;
+      color: #666;
+      text-align: right;
+      font-style: italic;
+      clear: right;
+      margin: -10px 0 20px;
+    }
+
+    .search {
+      clear: both;
+      margin-top: 2em;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+
+    footer a {
+      color: #999;
+      font-size: 0.8em;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li ul {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro – Banner" />
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Rosalía auf Deutsch</a></li>
+    <li><a href="#">Galicien – Galicia</a></li>
+    <li>
+      <strong>Rosalía ▼</strong>
+      <ul>
+        <li><a href="#">Biographie</a></li>
+        <li><a href="#">Werk</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Werke ▼</strong>
+      <ul>
+        <li><a href="#">1857-58 Die Blume und frühe Dichtungen</a></li>
+        <li><a href="#">1859 Die Tochter des Meeres</a></li>
+        <li><a href="#">1861 Flavio</a></li>
+        <li><a href="#">1863 Für meine Mutter</a></li>
+        <li><a href="#">1863 Galicische Lieder</a></li>
+        <li><a href="#">1864 Geschichten aus meiner Heimat</a></li>
+        <li><a href="#">1865 Der Mann aus Cádiz</a></li>
+        <li><a href="#">1865 Die Schriftstellerinnen. Brief an Eduarda</a></li>
+        <li><a href="#">1866 Ruinen</a></li>
+        <li><a href="#">1867 Der Ritter mit den blauen Stiefeln</a></li>
+        <li><a href="#">1880 Neue Blätter</a></li>
+        <li><a href="#">1881 Der erste Wahnsinnige</a></li>
+        <li><a href="#">1881 Der Palmsonntag</a></li>
+        <li><a href="#">1881 Padrón und die Überschwemmungen</a></li>
+        <li><a href="#">1881 Galicische Sitten</a></li>
+        <li><a href="#">1884 An den Ufern des Sar</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Rezeption</a></li>
+    <li><a href="#">MUSIK</a></li>
+    <li><a href="#">Zitate</a></li>
+    <li><a href="#">Alte Seite</a></li>
+    <li>
+      <strong>Literatur Spaniens ▼</strong>
+      <ul>
+        <li><a href="#">Die Etymologien Isidors von Sevilla</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Forschungsvorhaben</a></li>
+  </ul>
+</nav>
+
+<main>
+  <p>Willkommen auf meiner Internetpräsenz <strong>rosaliadecastro.de!</strong></p>
+
+  <p>Diese Seite widmet sich dem Leben und Werk der galicischen Dichterin Rosalía de Castro (1837–1885).</p>
+  <p>Hier finden Sie Informationen zu ihrer Biographie, ihren Werken und ihrer Rezeption im deutschsprachigen Raum.</p>
+
+  <div style="float: right; margin-left: 20px; margin-bottom: 10px; width: 232px;">
+    <figure style="margin: 0;">
+      <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt" width="232" height="300" style="display: block; border: 1px solid #ccc;">
+      <figcaption style="font-size: 0.9em; color: #666; font-style: italic; text-align: right; margin-top: 5px;">
+        Rosalía de Castro: Bearbeitung nach dem Foto von Luis Sellier, wahrscheinlich um 1880 (PD). By Luis Sellier [Public domain], via Wikimedia Commons
+      </figcaption>
+    </figure>
+  </div>
+
+  <p>Rosalía de Castro ist eine der faszinierendsten Gestalten der spanischen Literaturgeschichte, 
+    die auch im deutschsprachigen Raum eine immer größere Bedeutung erlangt hat. 
+    So kann erfreulicherweise festgestellt werden, dass es häufig die Pilger auf dem Jakobsweg 
+    sind, die auf ihrer Reise nach Santiago de Compostela auch der galicischen Nationalautorin 
+    begegnen und dann gern über diese großartige Dichterin schreiben.</p>
+
+  <p>Rosalía de Castros Leben und Werk sollte im deutschen Sprachraum tatsächlich noch viel prominenter sein. 
+    Diese Seite soll die Gelegenheit bieten, sich über Rosalía de Castro näher zu informieren.</p>
+
+  <p>Die Besucher können hier nicht nur Rosalías Gedichte und Romane kennenlernen, sondern auch einen Überblick 
+    über die deutschsprachige Rosalía-Literatur sowie biografische Angaben zu Rosalía de Castro auf Deutsch finden. 
+    Ein besonderes Augenmerk wird auf die deutschen Übersetzungen gelegt, von denen es mittlerweile immer mehr gibt.</p>
+
+  <p>Ich selbst habe bereits ihre ersten beiden Romane, zwei Gedichtsammlungen und einige kurze Texte sowie ihr Hauptwerk 
+    "Cantares Gallegos" (dt. Galicische Lieder) übersetzt.</p>
+
+  <p>Die Veröffentlichung des fünften Bandes meiner Werkausgabe in deutscher Übersetzung ist in Vorbereitung!</p>
+
+  <p>Literatur lebt nur, wenn sie auch gelesen und über sie geredet oder geschrieben wird.</p>
+
+  <p>Auf rosaliadecastro.de sollen die Besucher die Möglichkeit bekommen, in den entsprechenden Bereichen zu Rosalía de Castros 
+    Leben und Schreiben eigene Kommentare oder auch Beiträge zu verfassen.</p>
+
+  <div class="search">
+    <form action="#" method="get">
+      <label for="search">Suche nach:</label><br />
+      <input type="text" id="search" name="search" />
+      <input type="submit" value="Suchen" />
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 rosaliadecastro.de</p>
+  <p>
+    <a href="#">Impressum</a> |
+    <a href="#">Disclaimer</a>
+  </p>
+</footer>
+
+</body>
+</html>
