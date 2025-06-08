@@ -8,15 +8,12 @@ body {
     line-height: 1.6;
 }
 
-header {
-  background-image: url('images/sello-rosalia.jpg'); /* Bild als Hintergrund */
-  background-size: cover; /* Bild wird so skaliert, dass es den gesamten Bereich abdeckt */
-  background-position: center; /* Das Bild wird zentriert */
-  background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
-  height: 250px; /* Höhe des Headers */
-  width: 100%; /* Der Header nimmt die volle Breite des Containers ein */
-  margin: 0;
-  padding: 0;
+.banner {
+  background-image: url('images/sello-rosalia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,8 +22,10 @@ header {
   text-align: center;
 }
 
-header img {
-  display: none; /* Das Bild-Tag wird nicht mehr benötigt */
+.header-text {
+  background-color: rgba(0, 0, 0, 0.4); /* optional */
+  padding: 1em;
+  border-radius: 6px;
 }
 
 /* --- Navigation --- */
