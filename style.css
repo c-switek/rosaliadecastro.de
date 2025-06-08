@@ -1,90 +1,61 @@
-/* --- Basislayout & Schrift --- */
-body {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdfaf6; /* leichtes Elfenbein */
-    color: #2e2e2e; /* dunkles Grau */
-    line-height: 1.6;
-}
-
-/* --- Header mit Hintergrundbild --- */
-header {
-    background-image: url('bilder/headerbild.jpg'); /* Bildpfad anpassen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 250px;
+/* --- Layout mit Sidebar --- */
+.container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    text-align: center;
-}
-
-/* --- Titel im Header --- */
-header h1 {
-    font-size: 2.8em;
-    margin: 0;
-    padding: 0 20px;
-}
-
-/* --- Navigation --- */
-nav {
-    background-color: #004d40; /* Dunkelgrün */
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 1em;
     flex-wrap: wrap;
 }
 
-nav ul li {
-    margin: 0;
+/* --- Sidebar-Bereich --- */
+.sidebar {
+    flex: 1;
+    max-width: 300px;
+    font-size: 0.9em; /* kleinere Schriftgröße */
 }
 
-nav ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: #ffffff;
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #004d40;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5em 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.4em;
+}
+
+.sidebar ul li a {
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    color: #2e2e2e;
 }
 
-nav ul li a:hover {
-    background-color: #00695c;
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #00695c;
 }
 
-/* --- Hauptinhalt --- */
-main {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    border-radius: 6px;
+/* --- Hauptinhalt neben Sidebar --- */
+.content {
+    flex: 2;
 }
 
-/* --- Portraitbild (z. B. Rosalía) --- */
-.portrait {
-    float: right;
-    margin-left: 20px;
-    max-width: 150px;
-    border-radius: 4px;
-}
+/* --- Responsive: Untereinander auf kleinen Bildschirmen --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-/* --- Footer --- */
-footer {
-    background-color: #002b36;
-    color: #cccccc;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9em;
-    margin-top: 40px;
+    .sidebar,
+    .content {
+        max-width: 100%;
+    }
 }
