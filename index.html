@@ -40,6 +40,19 @@
     nav ul li {
       position: relative;
     }
+   
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  max-height: 400px;   
+  overflow-y: auto;    
+}
 
     nav ul li a,
     nav ul li strong {
