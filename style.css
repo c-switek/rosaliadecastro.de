@@ -1,17 +1,10 @@
 /* --- Basislayout & Schrift --- */
 
-
 .news-list li {
-
 
   margin-bottom: 1em;
 
-
 }
-
-
-
-
 
 /* === Basislayout & Schrift === */
 
@@ -27,19 +20,11 @@ body {
 
 }
 
-
-
-
 .news-list li {
-
 
   margin-bottom: 1em;
 
-
 }
-
-
-
 
 .banner-image {
 
@@ -51,11 +36,7 @@ body {
 
 }
 
-
-
-
 /* --- Navigation --- */
-
 
 /* === Navigation === */
 
@@ -69,22 +50,15 @@ nav {
 
 }
 
-
-
 nav ul li {
-
 
   margin: 0;
 
-
   position: relative; /* für Dropdown-Menüs */
-
 
   position: relative; /* Für Dropdowns */
 
 }
-
-
 
 nav ul li a {
 
@@ -96,51 +70,35 @@ nav ul li a {
 
   transition: background-color 0.3s, color 0.3s;
 
-
   white-space: nowrap;
 
 }
-
-
-
 
 /* Hover-Effekt Hauptmenüpunkte */
 
 nav ul li a:hover {
 
-
   background-color: #00695c;
-
 
   color: #ffffff; /* bleibt weiß auf grünem Hintergrund */
 
-
   background-color: #00695c; /* etwas helleres Grün */
-
 
   color: #ffffff;
 
 }
 
-
-
 /* Aktiver Menüpunkt */
 
 nav ul li.current-menu-item > a {
 
-
   color: #00cc66; /* grüne Schrift für aktiven Link */
-
 
   color: #00cc66; /* hellgrüne Schrift */
 
 }
 
-
-
-
 /* --- Dropdown-Menü --- */
-
 
 /* === Dropdown-Menü === */
 
@@ -154,11 +112,9 @@ nav ul li ul {
 
   left: 0;
 
-
   background-color: #004d40;
 
   min-width: 200px;
-
 
   background-color: #004d40;
 
@@ -168,23 +124,15 @@ nav ul li ul {
 
 }
 
-
-
-
 nav ul li:hover ul {
 
-
 /* Dropdown sichtbar bei Hover */
-
 
 nav ul li:hover > ul {
 
   display: block;
 
 }
-
-
-
 
 /* Dropdown-Links */
 
@@ -196,16 +144,11 @@ nav ul li ul li a {
 
   background-color: #004d40;
 
-
   text-decoration: none;
-
 
   font-weight: normal;
 
 }
-
-
-
 
 /* Hover-Effekt für Dropdown-Links */
 
@@ -213,13 +156,9 @@ nav ul li ul li a:hover {
 
   background-color: #00695c;
 
-
   color: #ffffff;
 
 }
-
-
-
 
 /* Aktives Dropdown-Menüelement */
 
@@ -232,11 +171,7 @@ nav ul li ul li.current-menu-item > a {
 
 }
 
-
-
-
 /* --- Hauptinhalt-Container mit Sidebar --- */
-
 
 /* === Container für Hauptinhalt & Sidebar === */
 
@@ -254,9 +189,7 @@ nav ul li ul li.current-menu-item > a {
 
   background-color: #ffffff;
 
-
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
-
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 
@@ -265,9 +198,6 @@ nav ul li ul li.current-menu-item > a {
   flex-wrap: wrap;
 
 }
-
-
-
 
 /* --- Sidebar --- */
 
@@ -286,9 +216,6 @@ nav ul li ul li.current-menu-item > a {
 
 }
 
-
-
-
 /* --- Hauptinhalt --- */
 
 
@@ -300,11 +227,7 @@ nav ul li ul li.current-menu-item > a {
 
 }
 
-
-
-
 /* --- Portraitbild --- */
-
 
 /* === Portraitbild === */
 
@@ -319,9 +242,6 @@ nav ul li ul li.current-menu-item > a {
   border-radius: 4px;
 
 }
-
-
-
 
 /* --- Footer --- */
 
@@ -340,44 +260,25 @@ footer {
 
 }
 
-
-
-
 /* --- Responsive Design --- */
-
 
 footer a {
 
-
   color: #999;
-
 
   font-size: 0.8em;
 
-
   text-decoration: none;
-
 
   margin: 0 5px;
 
-
 }
-
-
-
-
 
 footer a:hover {
 
-
   text-decoration: underline;
 
-
 }
-
-
-
-
 
 /* === Responsive Design === */
 
@@ -389,21 +290,15 @@ footer a:hover {
 
 @@ -173,11 +191,15 @@ footer {
 
-
-
   nav ul {
 
     flex-direction: column;
 
-
     align-items: center;
-
 
     align-items: flex-start;
 
   }
-
-
 
   nav ul li ul {
 
@@ -413,19 +308,48 @@ footer a:hover {
 
   }
 
-
-
-
-
   nav ul li ul li a {
 
-
     padding: 10px 16px;
-
 
   }
 
 }
     
-    
-   
+   /* === Hover-Anpassung: Menü wie alte Seite === */
+nav ul li a:hover,
+nav ul li strong:hover {
+  background-color: #00cc66;
+  color: white;
+}
+
+nav ul li ul li a:hover {
+  background-color: #00cc66;
+  color: white;
+}
+
+/* === Scrollbar-Styling wie alte Seite === */
+
+/* Für Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00cc66;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00994d;
+}
+
+/* Für Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00cc66 transparent;
+}
