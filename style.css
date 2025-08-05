@@ -1,187 +1,431 @@
 /* --- Basislayout & Schrift --- */
+
+
 .news-list li {
+
+
   margin-bottom: 1em;
+
+
 }
+
+
+
+
+
+/* === Basislayout & Schrift === */
 
 body {
+
   font-family: Arial, sans-serif;
+
   margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  line-height: 1.6;
+
+@@ -12,13 +8,17 @@ body {
+
   font-size: 16px;
+
 }
+
+
+
+
+.news-list li {
+
+
+  margin-bottom: 1em;
+
+
+}
+
+
+
 
 .banner-image {
+
   width: 100%;
+
   height: auto;
+
   display: block;
+
 }
+
+
+
 
 /* --- Navigation --- */
+
+
+/* === Navigation === */
+
 nav {
-  background-color: #000000; /* Schwarz wie im Original */
+
+  background-color: #004d40; /* Dunkelgrün */
+
   position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #333;
+
+@@ -37,8 +37,7 @@ nav ul {
+
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
 
 nav ul li {
-  position: relative;
+
+
   margin: 0;
+
+
+  position: relative; /* für Dropdown-Menüs */
+
+
+  position: relative; /* Für Dropdowns */
+
 }
+
+
 
 nav ul li a {
-  display: block;
-  padding: 14px 20px;
-  color: #ffffff;
+
+@@ -48,50 +47,58 @@ nav ul li a {
+
   text-decoration: none;
+
   font-weight: bold;
-  transition: background-color 0.3s;
+
+  transition: background-color 0.3s, color 0.3s;
+
+
+  white-space: nowrap;
+
 }
 
-/* Hover-Effekt für Hauptmenü */
+
+
+
+/* Hover-Effekt Hauptmenüpunkte */
+
 nav ul li a:hover {
-  background-color: #00aa00; /* Helles Grün */
+
+
+  background-color: #00695c;
+
+
+  color: #ffffff; /* bleibt weiß auf grünem Hintergrund */
+
+
+  background-color: #00695c; /* etwas helleres Grün */
+
+
   color: #ffffff;
+
 }
+
+
 
 /* Aktiver Menüpunkt */
-nav ul li.active a {
-  background-color: #00aa00;
-  color: #ffffff;
+
+nav ul li.current-menu-item > a {
+
+
+  color: #00cc66; /* grüne Schrift für aktiven Link */
+
+
+  color: #00cc66; /* hellgrüne Schrift */
+
 }
+
+
+
 
 /* --- Dropdown-Menü --- */
+
+
+/* === Dropdown-Menü === */
+
 nav ul li ul {
+
   display: none;
+
   position: absolute;
+
   top: 100%;
+
   left: 0;
-  background-color: #00aa00; /* Immer grün */
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  min-width: 160px;
+
+
+  background-color: #004d40;
+
+  min-width: 200px;
+
+
+  background-color: #004d40;
+
   z-index: 1000;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
 }
+
+
+
+
+nav ul li:hover ul {
+
+
+/* Dropdown sichtbar bei Hover */
+
 
 nav ul li:hover > ul {
+
   display: block;
+
 }
+
+
+
+
+/* Dropdown-Links */
 
 nav ul li ul li a {
-  display: block;
-  padding: 10px 15px;
+
+  padding: 12px 16px;
+
   color: #ffffff;
+
+  background-color: #004d40;
+
+
   text-decoration: none;
-  white-space: nowrap;
+
+
+  font-weight: normal;
+
 }
+
+
+
+
+/* Hover-Effekt für Dropdown-Links */
 
 nav ul li ul li a:hover {
-  background-color: #007700; /* Dunkleres Grün */
+
+  background-color: #00695c;
+
+
+  color: #ffffff;
+
 }
+
+
+
+
+/* Aktives Dropdown-Menüelement */
+
+
+/* Aktives Dropdown-Element */
+
+nav ul li ul li.current-menu-item > a {
+
+  background-color: #00695c;
+
+}
+
+
+
 
 /* --- Hauptinhalt-Container mit Sidebar --- */
+
+
+/* === Container für Hauptinhalt & Sidebar === */
+
 .container {
+
   display: flex;
+
   flex-direction: row;
-  gap: 2em;
-  max-width: 1200px;
+
+@@ -100,12 +107,12 @@ nav ul li ul li.current-menu-item > a {
+
   margin: 0 auto;
+
   padding: 40px 20px;
+
   background-color: #ffffff;
+
+
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
   border-radius: 6px;
+
   flex-wrap: wrap;
+
 }
+
+
+
 
 /* --- Sidebar --- */
+
+
+/* === Sidebar === */
+
 .sidebar {
+
   flex: 1;
+
   max-width: 280px;
-  font-size: 0.9em;
-}
 
-.sidebar h3 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-size: 1.1em;
-  color: #004d40;
-}
+@@ -138,20 +145,20 @@ nav ul li ul li.current-menu-item > a {
 
-.sidebar ul {
-  list-style-type: disc;
-  padding-left: 1.2em;
-  margin: 0 0 1.2em 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 0.5em;
-}
-
-.sidebar a {
-  color: #2e2e2e;
-  text-decoration: none;
-}
-
-.sidebar a:hover {
   text-decoration: underline;
+
 }
+
+
+
 
 /* --- Hauptinhalt --- */
+
+
+/* === Hauptinhalt === */
+
 .content {
+
   flex: 2;
+
 }
 
-/* --- Portraitbild (z. B. Rosalía) --- */
+
+
+
+/* --- Portraitbild --- */
+
+
+/* === Portraitbild === */
+
 .portrait {
+
   float: right;
+
   margin-left: 20px;
+
   max-width: 150px;
+
   border-radius: 4px;
+
 }
+
+
+
 
 /* --- Footer --- */
+
+
+/* === Footer === */
+
 footer {
+
   background-color: #002b36;
+
   color: #cccccc;
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 0.9em;
+
+@@ -161,7 +168,18 @@ footer {
+
   margin-top: 40px;
+
 }
 
-/* --- Responsive Design für kleinere Bildschirme --- */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .sidebar {
-    max-width: 100%;
-  }
+
+
+/* --- Responsive Design --- */
+
+
+footer a {
+
+
+  color: #999;
+
+
+  font-size: 0.8em;
+
+
+  text-decoration: none;
+
+
+  margin: 0 5px;
+
+
+}
+
+
+
+
+
+footer a:hover {
+
+
+  text-decoration: underline;
+
+
+}
+
+
+
+
+
+/* === Responsive Design === */
+
+@media (max-width: 768px) {
+
+  .container {
+
+    flex-direction: column;
+
+@@ -173,11 +191,15 @@ footer {
+
+
 
   nav ul {
+
     flex-direction: column;
+
+
     align-items: center;
+
+
+    align-items: flex-start;
+
   }
 
+
+
   nav ul li ul {
+
     position: static;
+
+    box-shadow: none;
+
   }
+
+
+
+
+
+  nav ul li ul li a {
+
+
+    padding: 10px 16px;
+
+
+  }
+
 }
-.dropdown-arrow {
-  font-size: 0.8em;
-  margin-left: 5px;
-}
+    
+    
+   
