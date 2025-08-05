@@ -48,8 +48,13 @@ nav ul li ul {
   background-color: #000;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* ✨ WICHTIG: Damit lange Listen scrollbar werden */
+  max-height: 400px;
+  overflow-y: auto;
 }
 
+/* Dropdown anzeigen bei Hover */
 nav ul li:hover > ul {
   display: block;
 }
