@@ -2,111 +2,157 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rosalía de Castro</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      line-height: 1.6;
-      font-size: 1em;
+    :root {
+      --green: #00cc33;
+      --black: #000000;
+      --white: #ffffff;
     }
 
-    .banner-image {
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--white);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header img {
       width: 100%;
       height: auto;
       display: block;
     }
 
+    /* Navigation */
     nav {
-      background-color: #000;
+      background-color: var(--black);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #333;
     }
 
     nav ul {
+      list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       flex-wrap: wrap;
-      list-style: none;
       justify-content: center;
     }
 
     nav ul li {
       position: relative;
     }
-   
-nav ul li ul {
-  display: none;
-  position: absolute;
-  background-color: #222;
-  min-width: 200px;
-  top: 100%;
-  left: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 1000;
-  max-height: 400px;   
-  overflow-y: auto;    
-}
 
     nav ul li a,
     nav ul li strong {
       display: block;
-      padding: 1em;
-      text-decoration: none;
-      color: white;
+      padding: 14px 20px;
+      color: var(--white);
       font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
       white-space: nowrap;
     }
 
     nav ul li a:hover,
     nav ul li strong:hover {
-      color: #00cc66;
+      background-color: var(--green);
+      color: var(--black);
+    }
+
+    /* Dropdown */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: var(--black);
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     nav ul li:hover ul {
       display: block;
     }
 
-    nav ul li ul li {
-      width: 100%;
-    }
-
     nav ul li ul li a {
-      color: #fff;
+      padding: 12px 16px;
+      font-weight: normal;
+      color: var(--white);
+      background-color: var(--black);
     }
 
     nav ul li ul li a:hover {
-      background-color: #333;
-      color: #00cc66;
+      background-color: var(--green);
+      color: var(--black);
     }
 
-    main {
-      padding: 2em;
-      max-width: 900px;
-      margin: 0 auto;
+    /* Layout */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 2em;
     }
 
-    .floating-img {
-      float: right;
-      margin: 0 0 10px 20px;
-      border: 1px solid #ccc;
-      width: 232px;
-      height: auto;
-    }
-
-    .image-description {
+    aside.sidebar {
+      flex: 1;
+      max-width: 280px;
+      background-color: var(--black);
+      color: var(--white);
+      padding: 1em;
       font-size: 0.9em;
+    }
+
+    aside.sidebar h3 {
+      color: var(--white);
+      font-size: 1.1em;
+      margin-top: 1.5em;
+    }
+
+    aside.sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    aside.sidebar ul li a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    aside.sidebar ul li a:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    main.content {
+      flex: 3;
+    }
+
+    figure {
+      float: right;
+      margin-left: 20px;
+      max-width: 232px;
+    }
+
+    figure img {
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+
+    figure figcaption {
+      font-size: 0.85em;
       color: #666;
-      text-align: right;
       font-style: italic;
-      clear: right;
-      margin: -10px 0 20px;
+      text-align: right;
+      margin-top: 5px;
     }
 
     .search {
@@ -115,16 +161,16 @@ nav ul li ul {
     }
 
     footer {
-      background-color: #003366;
-      color: white;
+      background-color: #002b36;
+      color: #ccc;
       text-align: center;
       padding: 1em;
-      margin-top: 2em;
+      margin-top: 3em;
+      font-size: 0.9em;
     }
 
     footer a {
       color: #999;
-      font-size: 0.8em;
       text-decoration: none;
       margin: 0 5px;
     }
@@ -139,57 +185,23 @@ nav ul li ul {
         align-items: flex-start;
       }
 
-      nav ul li ul {
-        position: static;
-        box-shadow: none;
+      .container {
+        flex-direction: column;
       }
-    }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-
-    .sidebar {
-      flex: 1;
-      max-width: 280px;
-      font-size: 0.85em;
-      margin-right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 1em;
-    }
-
-    .sidebar h3 {
-      font-size: 1.1em;
-      color: #fff;
-    }
-
-    .sidebar ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .sidebar ul li a:hover {
-      color: #00cc66;
-      text-decoration: underline;
-    }
-
-    .content {
-      flex: 3;
+      figure {
+        float: none;
+        margin: 1em 0;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro Banner" class="banner-image">
-  </header>
+
+<header>
+  <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro Banner">
+</header>
 
 <nav>
   <ul>
@@ -205,22 +217,10 @@ nav ul li ul {
     <li>
       <strong>Werke ▼</strong>
       <ul>
-        <li><a href="#">1857-58 Die Blume und frühe Dichtungen</a></li>
-        <li><a href="#">1859 Die Tochter des Meeres</a></li>
-        <li><a href="#">1861 Flavio</a></li>
-        <li><a href="#">1863 Für meine Mutter</a></li>
+        <li><a href="#">1857-58 Die Blume</a></li>
         <li><a href="#">1863 Galicische Lieder</a></li>
-        <li><a href="#">1864 Geschichten aus meiner Heimat</a></li>
-        <li><a href="#">1865 Der Mann aus Cádiz</a></li>
-        <li><a href="#">1865 Die Schriftstellerinnen. Brief an Eduarda</a></li>
-        <li><a href="#">1866 Ruinen</a></li>
-        <li><a href="#">1867 Der Ritter mit den blauen Stiefeln</a></li>
-        <li><a href="#">1880 Neue Blätter</a></li>
-        <li><a href="#">1881 Der erste Wahnsinnige</a></li>
-        <li><a href="#">1881 Der Palmsonntag</a></li>
-        <li><a href="#">1881 Padrón und die Überschwemmungen</a></li>
-        <li><a href="#">1881 Galicische Sitten</a></li>
         <li><a href="#">1884 An den Ufern des Sar</a></li>
+        <!-- Weitere Einträge hier -->
       </ul>
     </li>
     <li><a href="#">Rezeption</a></li>
@@ -230,7 +230,7 @@ nav ul li ul {
     <li>
       <strong>Literatur Spaniens ▼</strong>
       <ul>
-        <li><a href="#">Die Etymologien Isidors von Sevilla</a></li>
+        <li><a href="#">Isidor von Sevilla</a></li>
       </ul>
     </li>
     <li><a href="#">Forschungsvorhaben</a></li>
@@ -240,85 +240,47 @@ nav ul li ul {
 <div class="container">
   <aside class="sidebar">
     <h3>Letzte Beiträge</h3>
-
-    <ul class="news-list">
-  <li><a href="#">Interkulturelle Literaturvermittlung: Christian Switek realisiert Übersetzung des Audioguide für deutschsprachige Besucher im Haus Rosalía de Castro</a></li>
-  <li><a href="#">Christian Switek spricht anlässlich der Verleihung des Trasalba-Preises 2024 an Maribel Outeiriño über das Romanwerk Rosalía de Castros aus der Perspektive Otero Pedrayos</a></li>
-  <li><a href="#">Band 1 der Zeitschrift Follas Novas erschienen: Andrés Pociña und Aurora López würdigen Christian Switeks Übersetzungen Rosalía de Castros als Meilenstein der Vermittlung galicischer Literatur ins Deutsche</a></li>
-  <li><a href="#">Notizen zur deutschsprachigen Rezeption Rosalía de Castros in Deutschland</a></li>
-  <li><a href="#">Azorín und Rosalía de Castro</a></li>
-  <li><a href="#">María Xesús Lama veröffentlicht Rosalía de Castro Biographie</a></li>
-  <li><a href="#">Galicische Lieder auf Deutsch</a></li>
-  <li><a href="#">Rosalía de Castro im Werk von Camilo José Cela</a></li>
-</ul>
-
-    <h3>Letzte Kommentare</h3>
     <ul>
-      <li><a href="#">Adminioh bei Rosalía auf Deutsch</a></li>
-      <li><a href="#">Renate Söllner bei Rosalía auf Deutsch</a></li>
+      <li><a href="#">Christian Switek übersetzt Audioguide</a></li>
+      <li><a href="#">Trasalba-Preis 2024</a></li>
+      <li><a href="#">Band 1 der Zeitschrift Follas Novas</a></li>
     </ul>
 
     <h3>Archive</h3>
     <ul>
       <li><a href="#">Oktober 2017</a></li>
-      <li><a href="#">September 2017</a></li>
       <li><a href="#">Juli 2017</a></li>
-      <li><a href="#">November 2016</a></li>
-      <li><a href="#">Januar 2016</a></li>
-      <li><a href="#">Oktober 2015</a></li>
     </ul>
 
     <h3>Kategorien</h3>
     <ul>
       <li><a href="#">Allgemein</a></li>
-      <li><a href="#">Rosalía in deutschsprachiger Übersetzung</a></li>
+      <li><a href="#">Übersetzungen</a></li>
     </ul>
 
     <h3>Meta</h3>
     <ul>
-      <li><a href="#">Register</a></li>
-      <li><a href="#">Log in</a></li>
-      <li><a href="#">Beitrags-Feed (RSS)</a></li>
-      <li><a href="#">Kommentare als RSS</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">RSS</a></li>
     </ul>
   </aside>
 
   <main class="content">
-    <p>Willkommen auf meiner Internetpräsenz <strong>rosaliadecastro.de!</strong></p>
+    <p><strong>Willkommen auf rosaliadecastro.de!</strong></p>
     <p>Diese Seite widmet sich dem Leben und Werk der galicischen Dichterin Rosalía de Castro (1837–1885).</p>
-    <p>Hier finden Sie Informationen zu ihrer Biographie, ihren Werken und ihrer Rezeption im deutschsprachigen Raum.</p>
 
-    <div style="float: right; margin-left: 20px; margin-bottom: 10px; width: 232px;">
-      <figure style="margin: 0;">
-        <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt" width="232" height="300" style="display: block; border: 1px solid #ccc;">
-        <figcaption style="font-size: 0.9em; color: #666; font-style: italic; text-align: right; margin-top: 5px;">
-          Rosalía de Castro: Bearbeitung nach dem Foto von Luis Sellier, wahrscheinlich um 1880 (PD). By Luis Sellier [Public domain], via Wikimedia Commons
-        </figcaption>
-      </figure>
-    </div>
-    
-  <p>Rosalía de Castro ist eine der faszinierendsten Gestalten der spanischen Literaturgeschichte, 
-    die auch im deutschsprachigen Raum eine immer größere Bedeutung erlangt hat. 
-    So kann erfreulicherweise festgestellt werden, dass es häufig die Pilger auf dem Jakobsweg 
-    sind, die auf ihrer Reise nach Santiago de Compostela auch der galicischen Autorin 
-    begegnen und dann gern über diese großartige Dichterin schreiben.</p>
+    <figure>
+      <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt">
+      <figcaption>
+        Rosalía de Castro – Foto von Luis Sellier, ca. 1880 (gemeinfrei)
+      </figcaption>
+    </figure>
 
-  <p>Rosalía de Castros Leben und Werk sollte im deutschen Sprachraum tatsächlich noch viel prominenter sein. 
-    Diese Seite soll die Gelegenheit bieten, sich über Rosalía de Castro näher zu informieren.</p>
+    <p>Rosalía ist eine der faszinierendsten Gestalten der spanischen Literatur. Auf dieser Seite finden Sie Informationen zu ihren Gedichten, Romanen und ihrer Rezeption im deutschsprachigen Raum.</p>
 
-  <p>Die Besucher können hier nicht nur Rosalías Gedichte und Romane kennenlernen, sondern auch einen Überblick 
-    über die deutschsprachige Rosalía-Literatur sowie biografische Angaben zu Rosalía de Castro auf Deutsch finden. 
-    Ein besonderes Augenmerk wird auf die deutschen Übersetzungen gelegt, von denen es mittlerweile immer mehr gibt.</p>
+    <p>Ich habe bereits mehrere Werke von ihr ins Deutsche übersetzt – darunter "Galicische Lieder" und "An den Ufern des Sar".</p>
 
-  <p>Ich selbst habe bereits ihre ersten beiden Romane, zwei Gedichtsammlungen und einige kurze Texte sowie ihr Hauptwerk 
-    "Cantares Gallegos" (dt. Galicische Lieder) übersetzt.</p>
-
-  <p>Die Veröffentlichung des fünften Bandes meiner Werkausgabe in deutscher Übersetzung ist in Vorbereitung!</p>
-
-  <p>Literatur lebt nur, wenn sie auch gelesen und über sie geredet oder geschrieben wird.</p>
-
-  <p>Auf rosaliadecastro.de sollen die Besucher die Möglichkeit bekommen, in den entsprechenden Bereichen zu Rosalía de Castros 
-    Leben und Schreiben eigene Kommentare oder auch Beiträge zu verfassen.</p>
+    <p>Diese Website bietet Texte, Analysen, Übersetzungen und Gelegenheit zur Diskussion – besonders für Literaturbegeisterte, Lehrende und Studierende.</p>
 
     <div class="search">
       <form action="#" method="get">
@@ -331,12 +293,4 @@ nav ul li ul {
 </div>
 
 <footer>
-  <p>&copy; 2025 rosaliadecastro.de</p>
-  <p>
-    <a href="#">Impressum</a> |
-    <a href="#">Disclaimer</a>
-  </p>
-</footer>
-
-</body>
-</html>
+  <p>&copy; 
