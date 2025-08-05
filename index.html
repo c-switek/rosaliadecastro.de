@@ -2,21 +2,21 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rosalía de Castro</title>
   <style>
     :root {
-      --green: #00cc33;
-      --black: #000000;
-      --white: #ffffff;
+      --green: #00cc66;
+      --black: #000;
+      --white: #fff;
+      --dark-gray: #222;
     }
 
-    /* Resetting Margins & Padding */
-    *, *::before, *::after {
+    /* Basislayout */
+    * {
       box-sizing: border-box;
     }
 
-    /* HTML & Body Styles */
     html, body {
       margin: 0;
       padding: 0;
@@ -24,30 +24,28 @@
       background-color: var(--white);
       color: #222;
       line-height: 1.6;
-      overflow-x: hidden; /* Verhindert horizontales Scrollen */
-      width: 100%;
-      height: 100%;
+      overflow-x: hidden;
     }
 
-    /* Header Image Styles */
     header img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    /* Navigation Styles */
+    /* Navigation */
     nav {
       background-color: var(--black);
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #333;
     }
 
     nav ul {
-      list-style: none;
       margin: 0;
       padding: 0;
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -60,32 +58,33 @@
     nav ul li a,
     nav ul li strong {
       display: block;
-      padding: 14px 20px;
+      padding: 1em;
+      text-decoration: none;
       color: var(--white);
       font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s, color 0.3s;
       white-space: nowrap;
+      transition: color 0.3s, background-color 0.3s;
     }
 
     nav ul li a:hover,
     nav ul li strong:hover {
-      background-color: var(--green);
-      color: var(--black);
+      color: var(--green);
     }
 
     nav ul li ul {
       display: none;
       position: absolute;
-      background-color: var(--black);
+      background-color: var(--dark-gray);
+      min-width: 240px;
       top: 100%;
       left: 0;
-      min-width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      max-height: 400px;
+      overflow-y: auto;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    nav ul li:hover ul {
+    nav ul li:hover > ul {
       display: block;
     }
 
@@ -96,43 +95,54 @@
     }
 
     nav ul li ul li a:hover {
-      background-color: var(--green);
-      color: var(--black);
+      background-color: #333;
+      color: var(--green);
     }
 
-    /* Container Styles */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li ul {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+      }
+    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
       max-width: 100%;
-      margin: 0;
-      padding: 0;
+      margin: 0 auto;
     }
 
-    /* Sidebar Styles */
     aside.sidebar {
       flex: 1;
       max-width: 280px;
+      font-size: 0.85em;
+      margin-right: 20px;
       background-color: var(--black);
       color: var(--white);
       padding: 1em;
-      font-size: 0.9em;
     }
 
     aside.sidebar h3 {
-      color: var(--white);
       font-size: 1.1em;
-      margin-top: 1.5em;
+      color: var(--white);
     }
 
     aside.sidebar ul {
-      list-style: none;
+      list-style-type: none;
       padding-left: 0;
     }
 
     aside.sidebar ul li a {
-      color: var(--white);
       text-decoration: none;
+      color: var(--white);
     }
 
     aside.sidebar ul li a:hover {
@@ -140,12 +150,51 @@
       text-decoration: underline;
     }
 
-    /* Main Content Styles */
     main.content {
       flex: 3;
       padding: 2em;
-      overflow: hidden; /* Verhindert, dass der Content überläuft */
       max-width: 100%;
+    }
+
+    .floating-img {
+      float: right;
+      margin: 0 0 10px 20px;
+      border: 1px solid #ccc;
+      width: 232px;
+      height: auto;
+    }
+
+    .image-description {
+      font-size: 0.9em;
+      color: #666;
+      text-align: right;
+      font-style: italic;
+      clear: right;
+      margin: -10px 0 20px;
+    }
+
+    .search {
+      clear: both;
+      margin-top: 2em;
+    }
+
+    footer {
+      background-color: #003366;
+      color: var(--white);
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+
+    footer a {
+      color: #999;
+      font-size: 0.8em;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     figure {
@@ -160,51 +209,20 @@
     }
 
     figure figcaption {
-      font-size: 0.85em;
+      font-size: 0.9em;
       color: #666;
       font-style: italic;
       text-align: right;
       margin-top: 5px;
     }
 
-    .search {
-      clear: both;
-      margin-top: 2em;
-    }
-
-    footer {
-      background-color: #002b36;
-      color: #ccc;
-      text-align: center;
-      padding: 1em;
-      margin-top: 3em;
-      font-size: 0.9em;
-      width: 100%;
-    }
-
-    footer a {
-      color: #999;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       .container {
         flex-direction: column;
       }
 
-      main.content {
-        padding: 1em;
+      aside.sidebar {
+        max-width: 100%;
       }
 
       figure {
@@ -212,119 +230,104 @@
         margin: 1em 0;
         max-width: 100%;
       }
-    }
 
-    /* Overflow prevention for body and container */
-    body, .container, header, footer {
-      overflow-x: hidden;
-      width: 100%;
+      main.content {
+        padding: 1em;
+      }
     }
-
   </style>
 </head>
 <body>
+  <header>
+    <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro Banner">
+  </header>
 
-<header>
-  <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro Banner">
-</header>
+  <nav>
+    <ul>
+      <li><a href="#">Rosalía auf Deutsch</a></li>
+      <li><a href="#">Galicien – Galicia</a></li>
+      <li>
+        <strong>Rosalía ▼</strong>
+        <ul>
+          <li><a href="#">Biographie</a></li>
+          <li><a href="#">Werk</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Werke ▼</strong>
+        <ul>
+          <li><a href="#">1857-58 Die Blume und frühe Dichtungen</a></li>
+          <li><a href="#">1859 Die Tochter des Meeres</a></li>
+          <li><a href="#">1861 Flavio</a></li>
+          <li><a href="#">1863 Für meine Mutter</a></li>
+          <li><a href="#">1863 Galicische Lieder</a></li>
+          <li><a href="#">1864 Geschichten aus meiner Heimat</a></li>
+          <li><a href="#">1865 Der Mann aus Cádiz</a></li>
+          <li><a href="#">1865 Die Schriftstellerinnen. Brief an Eduarda</a></li>
+          <li><a href="#">1866 Ruinen</a></li>
+          <li><a href="#">1867 Der Ritter mit den blauen Stiefeln</a></li>
+          <li><a href="#">1880 Neue Blätter</a></li>
+          <li><a href="#">1881 Der erste Wahnsinnige</a></li>
+          <li><a href="#">1881 Der Palmsonntag</a></li>
+          <li><a href="#">1881 Padrón und die Überschwemmungen</a></li>
+          <li><a href="#">1881 Galicische Sitten</a></li>
+          <li><a href="#">1884 An den Ufern des Sar</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Rezeption</a></li>
+      <li><a href="#">MUSIK</a></li>
+      <li><a href="#">Zitate</a></li>
+      <li><a href="#">Alte Seite</a></li>
+      <li>
+        <strong>Literatur Spaniens ▼</strong>
+        <ul>
+          <li><a href="#">Die Etymologien Isidors von Sevilla</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Forschungsvorhaben</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul>
-    <li><a href="#">Rosalía auf Deutsch</a></li>
-    <li><a href="#">Galicien – Galicia</a></li>
-    <li>
-      <strong>Rosalía ▼</strong>
-      <ul>
-        <li><a href="#">Biographie</a></li>
-        <li><a href="#">Werk</a></li>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Letzte Beiträge</h3>
+      <ul class="news-list">
+        <li><a href="#">Interkulturelle Literaturvermittlung: Audioguide-Übersetzung</a></li>
+        <li><a href="#">Switek über Otero Pedrayos Romanverständnis</a></li>
+        <li><a href="#">Follas Novas Band 1: Pociña und López</a></li>
+        <li><a href="#">Notizen zur Rezeption Rosalías</a></li>
+        <li><a href="#">Archivierte Website</a></li>
       </ul>
-</li>
-    <li>
-      <strong>Werke ▼</strong>
-      <ul>
-        <li><a href="#">1857-58 Die Blume</a></li>
-        <li><a href="#">1863 Galicische Lieder</a></li>
-        <li><a href="#">1884 An den Ufern des Sar</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Rezeption</a></li>
-    <li><a href="#">MUSIK</a></li>
-    <li><a href="#">Zitate</a></li>
-    <li><a href="#">Alte Seite</a></li>
-    <li>
-      <strong>Literatur Spaniens ▼</strong>
-      <ul>
-        <li><a href="#">Die Etymologien Isidors von Sevilla</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Forschungsvorhaben</a></li>
-  </ul>
-</nav>
+    </aside>
 
-<div class="container">
-  <aside class="sidebar">
-    <h3>Letzte Beiträge</h3>
-    <ul>
-      <li><a href="#">Christian Switek übersetzt Audioguide</a></li>
-      <li><a href="#">Trasalba-Preis 2024</a></li>
-      <li><a href="#">Band 1 der Zeitschrift Follas Novas</a></li>
-    </ul>
+    <main class="content">
+      <figure>
+        <img src="images/rosalia-de-castro.jpg" alt="Rosalía de Castro">
+        <figcaption>Rosalía de Castro (1837–1885)</figcaption>
+      </figure>
 
-    <h3>Archive</h3>
-    <ul>
-      <li><a href="#">Oktober 2017</a></li>
-      <li><a href="#">Juli 2017</a></li>
-    </ul>
+      <h1>Willkommen auf rosalia-de-castro.de!</h1>
+      <p>
+        Rosalía de Castro war eine galicische Schriftstellerin, die maßgeblich zur Wiederbelebung der galicischen Sprache beigetragen hat.
+        Ihre Werke umfassen Lyrik, Prosa und politische Essays, die tief in der galicischen Kultur verwurzelt sind.
+      </p>
 
-    <h3>Kategorien</h3>
-    <ul>
-      <li><a href="#">Allgemein</a></li>
-      <li><a href="#">Übersetzungen</a></li>
-    </ul>
+      <p>
+        Diese Website möchte Ihnen eine Einführung in das Werk und die Rezeption der Autorin geben – mit besonderem Fokus auf
+        Übersetzungen ins Deutsche und kulturvermittelnde Perspektiven.
+      </p>
 
-    <h3>Meta</h3>
-    <ul>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">RSS</a></li>
-    </ul>
-  </aside>
+      <section class="search">
+        <label for="suchen">Seite durchsuchen:</label>
+        <input type="search" id="suchen" name="suchen" placeholder="Suchbegriff eingeben" />
+      </section>
+    </main>
+  </div>
 
-  <main class="content">
-    <p><strong>Willkommen auf rosaliadecastro.de!</strong></p>
-    <p>Diese Seite widmet sich dem Leben und Werk der galicischen Dichterin Rosalía de Castro (1837–1885).</p>
-
-    <figure>
-      <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt">
-      <figcaption>
-        Rosalía de Castro – Foto von Luis Sellier, ca. 1880 (gemeinfrei)
-      </figcaption>
-    </figure>
-
-    <p>Rosalía ist eine der faszinierendsten Gestalten der spanischen Literatur. 
-      Auf dieser Seite finden Sie Informationen zu ihren Gedichten, Romanen und ihrer Rezeption im deutschsprachigen Raum.</p>
-
-    <p>Ich habe bereits mehrere Werke von ihr ins Deutsche übersetzt – darunter "Galicische Lieder" und "An den Ufern des Sar".</p>
-
-    <p>Diese Website bietet Texte, Analysen, Übersetzungen und Gelegenheit zur Diskussion – besonders für Literaturbegeisterte, Lehrende und Studierende.</p>
-
-    <div class="search">
-      <form action="#" method="get">
-        <label for="search">Suche nach:</label><br />
-        <input type="text" id="search" name="search" />
-        <input type="submit" value="Suchen" />
-      </form>
-    </div>
-  </main>
-</div>
-
-<footer>
-  <p>&copy; 2025 rosaliadecastro.de</p>
-  <p>
+  <footer>
+    <p>© 2025 rosalia-de-castro.de – Ein Projekt zur Kulturvermittlung.</p>
     <a href="#">Impressum</a> |
     <a href="#">Datenschutz</a>
-  </p>
-</footer>
-
+  </footer>
 </body>
 </html>
-
