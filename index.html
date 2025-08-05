@@ -17,11 +17,11 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
+      height: 100%;
       background-color: var(--white);
+      font-family: Arial, sans-serif;
       color: #222;
-      line-height: 1.6;
     }
 
     header img {
@@ -36,6 +36,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      width: 100%;
     }
 
     nav ul {
@@ -94,19 +95,17 @@
     }
 
     /* Layout */
-    .container {
+    .layout {
       display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
+      min-height: 100%;
     }
 
     aside.sidebar {
-      flex: 1;
-      max-width: 280px;
+      width: 280px;
       background-color: var(--black);
       color: var(--white);
       padding: 20px;
+      flex-shrink: 0;
     }
 
     aside.sidebar h3 {
@@ -131,7 +130,7 @@
     }
 
     main.content {
-      flex: 3;
+      flex: 1;
       padding: 40px 20px;
     }
 
@@ -184,8 +183,12 @@
         align-items: flex-start;
       }
 
-      .container {
+      .layout {
         flex-direction: column;
+      }
+
+      aside.sidebar {
+        width: 100%;
       }
 
       main.content {
@@ -239,7 +242,7 @@
   </ul>
 </nav>
 
-<div class="container">
+<div class="layout">
   <aside class="sidebar">
     <h3>Letzte Beiträge</h3>
     <ul>
