@@ -11,10 +11,12 @@
       --white: #ffffff;
     }
 
+    /* Resetting Margins & Padding */
     *, *::before, *::after {
       box-sizing: border-box;
     }
 
+    /* HTML & Body Styles */
     html, body {
       margin: 0;
       padding: 0;
@@ -22,7 +24,7 @@
       background-color: var(--white);
       color: #222;
       line-height: 1.6;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Verhindert horizontales Scrollen */
     }
 
     header img {
@@ -31,6 +33,7 @@
       display: block;
     }
 
+    /* Navigation Styles */
     nav {
       background-color: var(--black);
       position: sticky;
@@ -76,7 +79,7 @@
       left: 0;
       min-width: 200px;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     nav ul li:hover ul {
@@ -94,13 +97,16 @@
       color: var(--black);
     }
 
+    /* Container Styles */
     .container {
       display: flex;
+      flex-wrap: wrap; /* ermöglicht das Umfließen der Sidebar und des Contents */
       max-width: 1200px;
       margin: 0 auto;
       padding: 0;
     }
 
+    /* Sidebar Styles */
     aside.sidebar {
       flex: 1;
       max-width: 280px;
@@ -131,6 +137,7 @@
       text-decoration: underline;
     }
 
+    /* Main Content Styles */
     main.content {
       flex: 3;
       padding: 2em;
@@ -179,6 +186,7 @@
       text-decoration: underline;
     }
 
+    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -295,4 +303,13 @@
   </main>
 </div>
 
-```
+<footer>
+  <p>&copy; 2025 rosaliadecastro.de</p>
+  <p>
+    <a href="#">Impressum</a> |
+    <a href="#">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>
