@@ -11,15 +11,19 @@
       --white: #ffffff;
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background-color: var(--white);
       color: #222;
       line-height: 1.6;
     }
 
-    /* Header */
     header img {
       width: 100%;
       height: auto;
@@ -36,8 +40,6 @@
 
     nav ul {
       list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -64,7 +66,6 @@
       color: var(--black);
     }
 
-    /* Dropdown */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -97,9 +98,7 @@
       display: flex;
       flex-wrap: wrap;
       max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      gap: 2em;
+      margin: 0 auto;
     }
 
     aside.sidebar {
@@ -107,14 +106,13 @@
       max-width: 280px;
       background-color: var(--black);
       color: var(--white);
-      padding: 1em;
-      font-size: 0.9em;
+      padding: 20px;
     }
 
     aside.sidebar h3 {
       color: var(--white);
       font-size: 1.1em;
-      margin-top: 1.5em;
+      margin: 1.2em 0 0.5em;
     }
 
     aside.sidebar ul {
@@ -134,6 +132,7 @@
 
     main.content {
       flex: 3;
+      padding: 40px 20px;
     }
 
     figure {
@@ -189,6 +188,10 @@
         flex-direction: column;
       }
 
+      main.content {
+        padding: 20px;
+      }
+
       figure {
         float: none;
         margin: 1em 0;
@@ -220,7 +223,6 @@
         <li><a href="#">1857-58 Die Blume</a></li>
         <li><a href="#">1863 Galicische Lieder</a></li>
         <li><a href="#">1884 An den Ufern des Sar</a></li>
-        <!-- Weitere Einträge hier -->
       </ul>
     </li>
     <li><a href="#">Rezeption</a></li>
@@ -241,9 +243,9 @@
   <aside class="sidebar">
     <h3>Letzte Beiträge</h3>
     <ul>
-      <li><a href="#">Christian Switek übersetzt Audioguide</a></li>
+      <li><a href="#">Übersetzung des Audioguides</a></li>
       <li><a href="#">Trasalba-Preis 2024</a></li>
-      <li><a href="#">Band 1 der Zeitschrift Follas Novas</a></li>
+      <li><a href="#">Follas Novas – Band 1 erschienen</a></li>
     </ul>
 
     <h3>Archive</h3>
@@ -293,4 +295,12 @@
 </div>
 
 <footer>
-  <p>&copy; 
+  <p>&copy; 2025 rosaliadecastro.de</p>
+  <p>
+    <a href="#">Impressum</a> |
+    <a href="#">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>
