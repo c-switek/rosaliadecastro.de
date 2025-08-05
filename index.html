@@ -11,17 +11,12 @@
       --white: #ffffff;
     }
 
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      background-color: var(--white);
       font-family: Arial, sans-serif;
+      background-color: var(--white);
       color: #222;
+      line-height: 1.6;
     }
 
     header img {
@@ -30,17 +25,17 @@
       display: block;
     }
 
-    /* Navigation */
     nav {
       background-color: var(--black);
       position: sticky;
       top: 0;
       z-index: 1000;
-      width: 100%;
     }
 
     nav ul {
       list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -94,24 +89,28 @@
       color: var(--black);
     }
 
-    /* Layout */
-    .layout {
+    .container {
       display: flex;
-      min-height: 100%;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      gap: 2em;
     }
 
     aside.sidebar {
-      width: 280px;
+      flex: 1;
+      max-width: 280px;
       background-color: var(--black);
       color: var(--white);
-      padding: 20px;
-      flex-shrink: 0;
+      padding: 1em;
+      font-size: 0.9em;
     }
 
     aside.sidebar h3 {
       color: var(--white);
       font-size: 1.1em;
-      margin: 1.2em 0 0.5em;
+      margin-top: 1.5em;
     }
 
     aside.sidebar ul {
@@ -130,8 +129,7 @@
     }
 
     main.content {
-      flex: 1;
-      padding: 40px 20px;
+      flex: 3;
     }
 
     figure {
@@ -183,16 +181,9 @@
         align-items: flex-start;
       }
 
-      .layout {
+      .container {
         flex-direction: column;
-      }
-
-      aside.sidebar {
-        width: 100%;
-      }
-
-      main.content {
-        padding: 20px;
+        padding: 0 10px;
       }
 
       figure {
@@ -242,13 +233,13 @@
   </ul>
 </nav>
 
-<div class="layout">
+<div class="container">
   <aside class="sidebar">
     <h3>Letzte Beiträge</h3>
     <ul>
-      <li><a href="#">Übersetzung des Audioguides</a></li>
+      <li><a href="#">Christian Switek übersetzt Audioguide</a></li>
       <li><a href="#">Trasalba-Preis 2024</a></li>
-      <li><a href="#">Follas Novas – Band 1 erschienen</a></li>
+      <li><a href="#">Band 1 der Zeitschrift Follas Novas</a></li>
     </ul>
 
     <h3>Archive</h3>
