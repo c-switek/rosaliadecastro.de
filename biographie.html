@@ -1,19 +1,659 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Biographie – Rosalía de Castro</title>
-  <link rel="stylesheet" href="style.css"> <!-- falls du eine CSS-Datei auslagern willst -->
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Rosalía de Castro</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background-color: #ffffff;
+
+      line-height: 1.6;
+
+      font-size: 1em;
+
+    }
+
+    .banner-image {
+
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+    }
+
+    nav {
+
+      background-color: #000;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      border-bottom: 1px solid #333;
+
+    }
+
+    nav ul {
+
+      margin: 0;
+
+      padding: 0;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      list-style: none;
+
+      justify-content: center;
+
+    }
+
+    nav ul li {
+
+      position: relative;
+
+    }
+
+nav ul li ul {
+
+  display: none;
+
+  position: absolute;
+
+  background-color: #222;
+
+  min-width: 200px;
+
+  top: 100%;
+
+  left: 0;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  z-index: 1000;
+
+  max-height: 400px;   
+
+  overflow-y: auto;    
+
+}
+
+    nav ul li a,
+
+    nav ul li strong {
+
+      display: block;
+
+      padding: 1em;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-weight: bold;
+
+      white-space: nowrap;   
+
+ }
+
+    nav ul li a:hover,
+
+    nav ul li strong:hover {
+
+      color: #00cc66;
+
+    }
+ 
+    nav ul li ul {
+
+      display: none;
+
+      position: absolute;
+
+      background-color: #222;
+
+
+      min-width: 200px;
+
+      top: 100%;
+
+      left: 0;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+      z-index: 1000;
+
+    }
+
+    nav ul li:hover ul {
+
+      display: block;
+
+    }
+
+    nav ul li ul li {
+
+      width: 100%;
+
+    }
+
+    nav ul li ul li a {
+
+      color: #fff;
+
+    }
+
+    nav ul li ul li a:hover {
+
+      background-color: #333;
+
+      color: #00cc66;
+
+    }
+
+    main {
+
+      padding: 2em;
+
+      max-width: 900px;
+
+      margin: 0 auto;
+
+    }
+
+    .floating-img {
+
+      float: right;
+
+      margin: 0 0 10px 20px;
+
+      border: 1px solid #ccc;
+
+      width: 232px;
+
+      height: auto;
+
+    }
+
+    .image-description {
+
+      font-size: 0.9em;
+
+      color: #666;
+
+      text-align: right;
+
+      font-style: italic;
+
+      clear: right;
+
+      margin: -10px 0 20px;
+
+    }
+
+    .search {
+
+      clear: both;
+
+      margin-top: 2em;
+
+    }
+
+    footer {
+
+      background-color: #003366;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 1em;
+
+      margin-top: 2em;
+
+    }
+
+    footer a {
+
+      color: #999;
+
+      font-size: 0.8em;
+
+      text-decoration: none;
+
+      margin: 0 5px;
+
+    }
+
+    footer a:hover {
+
+      text-decoration: underline;
+
+    }
+
+    @media (max-width: 768px) {
+
+      nav ul {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+      nav ul li ul {
+
+        position: static;
+
+        box-shadow: none;
+
+      }
+
+    }
+
+    .container {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      margin: 0 auto;
+
+    }
+
+    .sidebar {
+
+      flex: 1;
+
+      max-width: 280px;
+
+      font-size: 0.85em;
+
+      margin-right: 20px;
+
+      background-color: #000;
+
+      color: #fff;
+
+      padding: 1em;
+
+    }
+
+    .sidebar h3 {
+
+      font-size: 1.1em;
+
+      color: #fff;
+
+    }
+
+    .sidebar ul {
+
+      list-style-type: none;
+
+      padding-left: 0;
+
+    }
+
+    .sidebar ul li a {
+
+      text-decoration: none;
+
+      color: #fff;
+
+    }
+
+    .sidebar ul li a:hover {
+
+      color: #00cc66;
+
+      text-decoration: underline;
+
+    }
+
+    .content {
+
+      flex: 3;
+
+    }
+
+    nav ul li a:hover,
+nav ul li strong:hover,
+nav ul li ul li a:hover {
+  background-color: #00cc66;
+  color: white;
+}
+
+  </style>
+
 </head>
+
 <body>
+
   <header>
+
     <img src="images/sello-rosalia.jpg" alt="Rosalía de Castro Banner" class="banner-image">
+
   </header>
-  <nav>…</nav> <!-- Den gleichen Navigationsblock wie in index.html hier einfügen -->
-  <main>
-    <h1>Biographie von Rosalía de Castro</h1>
-    <p>… dein Text hier …</p>
+
+<nav>
+
+  <ul>
+
+    <li><a href="#">Rosalía auf Deutsch</a></li>
+
+    <li><a href="#">Galicien – Galicia</a></li>
+
+    <li>
+
+      <strong>Rosalía ▼</strong>
+
+      <ul>
+    
+      <li><a href="biographie.html">Biographie</a></li>
+        
+        <li><a href="#">Werk</a></li>
+        
+      </ul>
+
+    </li>
+
+    <li>
+
+      <strong>Werke ▼</strong>
+
+      <ul>
+
+        <li><a href="#">1857-58 Die Blume und frühe Dichtungen</a></li>
+
+        <li><a href="#">1859 Die Tochter des Meeres</a></li>
+
+        <li><a href="#">1861 Flavio</a></li>
+
+        <li><a href="#">1863 Für meine Mutter</a></li>
+
+        <li><a href="#">1863 Galicische Lieder</a></li>
+
+        <li><a href="#">1864 Geschichten aus meiner Heimat</a></li>
+
+        <li><a href="#">1865 Der Mann aus Cádiz</a></li>
+
+        <li><a href="#">1865 Die Schriftstellerinnen. Brief an Eduarda</a></li>
+
+        <li><a href="#">1866 Ruinen</a></li>
+
+        <li><a href="#">1867 Der Ritter mit den blauen Stiefeln</a></li>
+
+        <li><a href="#">1880 Neue Blätter</a></li>
+
+        <li><a href="#">1881 Der erste Wahnsinnige</a></li>
+
+        <li><a href="#">1881 Der Palmsonntag</a></li>
+
+        <li><a href="#">1881 Padrón und die Überschwemmungen</a></li>
+
+        <li><a href="#">1881 Galicische Sitten</a></li>
+
+        <li><a href="#">1884 An den Ufern des Sar</a></li>
+
+      </ul>
+
+    </li>
+
+    <li><a href="#">Rezeption</a></li>
+
+    <li><a href="#">MUSIK</a></li>
+
+    <li><a href="#">Zitate</a></li>
+
+    <li><a href="#">Alte Seite</a></li>
+
+    <li>
+
+      <strong>Literatur Spaniens ▼</strong>
+
+      <ul>
+
+        <li><a href="#">Die Etymologien Isidors von Sevilla</a></li>
+
+      </ul>
+
+    </li>
+
+    <li><a href="#">Forschungsvorhaben</a></li>
+
+  </ul>
+
+</nav>
+
+<div class="container">
+
+  <aside class="sidebar">
+
+    <h3>Letzte Beiträge</h3>
+
+    <ul class="news-list">
+
+  <li><a href="#">Interkulturelle Literaturvermittlung: Christian Switek realisiert Übersetzung des Audioguide für deutschsprachige Besucher im Haus Rosalía de Castro</a></li>
+
+  <li><a href="#">Christian Switek spricht anlässlich der Verleihung des Trasalba-Preises 2024 an Maribel Outeiriño über das Romanwerk Rosalía de Castros aus der Perspektive Otero Pedrayos</a></li>
+
+  <li><a href="#">Band 1 der Zeitschrift Follas Novas erschienen: Andrés Pociña und Aurora López würdigen Christian Switeks Übersetzungen Rosalía de Castros als Meilenstein der Vermittlung galicischer Literatur ins Deutsche</a></li>
+
+  <li><a href="#">Notizen zur deutschsprachigen Rezeption Rosalía de Castros in Deutschland</a></li>
+
+  <li><a href="#">Azorín und Rosalía de Castro</a></li>
+
+  <li><a href="#">María Xesús Lama veröffentlicht Rosalía de Castro Biographie</a></li>
+
+  <li><a href="#">Galicische Lieder auf Deutsch</a></li>
+
+  <li><a href="#">Rosalía de Castro im Werk von Camilo José Cela</a></li>
+
+</ul>
+
+    <h3>Letzte Kommentare</h3>
+
+    <ul>
+
+      <li><a href="#">Adminioh bei Rosalía auf Deutsch</a></li>
+
+      <li><a href="#">Renate Söllner bei Rosalía auf Deutsch</a></li>
+
+    </ul>
+
+    <h3>Archive</h3>
+
+    <ul>
+
+      <li><a href="#">Oktober 2017</a></li>
+
+      <li><a href="#">September 2017</a></li>
+
+      <li><a href="#">Juli 2017</a></li>
+
+      <li><a href="#">November 2016</a></li>
+
+      <li><a href="#">Januar 2016</a></li>
+
+      <li><a href="#">Oktober 2015</a></li>
+
+    </ul>
+
+    <h3>Kategorien</h3>
+
+    <ul>
+
+      <li><a href="#">Allgemein</a></li>
+
+      <li><a href="#">Rosalía in deutschsprachiger Übersetzung</a></li>
+
+    </ul>
+
+    <h3>Meta</h3>
+
+    <ul>
+
+      <li><a href="#">Register</a></li>
+
+      <li><a href="#">Log in</a></li>
+
+      <li><a href="#">Beitrags-Feed (RSS)</a></li>
+
+      <li><a href="#">Kommentare als RSS</a></li>
+
+    </ul>
+
+  </aside>
+
+  <main class="content">
+
+    <p>Rosalía de Castro <strong>Herkunft</strong></p>
+
+    <p>
+Die am 24. Februar 1837 als „Tochter unbekannter Eltern” in Santiago de Compostela getaufte Rosalía de Castro erfährt schon kurz nach der Geburt die Seltsamkeiten ihrer Zeit. Denn ihre Eltern sind keineswegs „unbekannt”: Die Adlige Teresa de Castro und der Priesterseminarist José Martínez Viojo befürcheten wahrscheinlich gesellschaftliche und klerikale Sanktionen. Denn dass ein Kind im Zölibat gezeugt wird, gilt als Schande und Sünde. So beauftragen die Eltern die Schwester des Vaters, María Francisca Martínez, zur Taufpatin. 
+Die Tochter eines Priesters  
+Rosalía de Castro entgeht dem Schicksal, welches unehelich geborene Kinder normaler Weise erfahren: die Zeit bis zur Heirat des ersten Elternteils im Waisenhaus zu fristen. Lange Zeit glaubte man, dass sie bei der Familie ihres Vaters in Ortoño, einem kleinen Ort in der Nähe Santiago de Compostelas unter der Obhut ihrer Taufpatin aufwächst. Woher diese Annahme stammt, kann nicht nachvollzogen werden. Die Rosalía-Forschung geht davon aus, dass diese These von der Familie väterlicherseits in den Diskurs hineingetragen worden ist.
+Die Beziehung zur Mutter und Bildung
+Es gilt als bewiesen, dass Castros leibliche Mutter Teresa ihre einzige Tochter schon vor 1850 zu sich genommen hat und dann mit ihr zusammen nach Santiago de Compostela zieht. Dort leben sie weiterhin zusammen mit ihrer Taufpatin María Martínez.
+Die Außergewöhnlichkeit ihres Charakters, ihre Intelligenz und ihr kulturelles Interesse führen Castro schon bald in die Kreise des Liceo de Santiago, wo Studenten und Intellektuelle wie Eduardo Pondal oder die intimen Freunde Aurelio Aguirre und Manuel Murguía ein und aus gehen. 1852 spielt sie dort erstmals die Hauptrolle im Stück Rosmunda von Gil y Zárate.
+Erfahrung von Tod und Krankheit
+Ihr ethnologisches Interesse lässt sich zum Beispiel am Besuch des Marienfestes „Nosa Señora da Barca” (Unsere Liebe Frau vom Nachen) in Muxía (ein Fischerdorf an der sogenannten Todesküste im Norden Galiciens) im September 1853 ablesen. Sie ist dort zusammen mit dem später berühmt werdenden galicischen Dichter Eduardo Pondal und seiner Schwester Eduarda. Die jungen Frauen infizieren sich dort mit Typhus. Castro überlebt die tödliche Krankheit, Eduarda jedoch nicht. Schon sehr früh kommt Castro mit dem Tod hautnah in Berührung. Über die Gründe, warum Castro 1856 nach Madrid und dort an den königlichen Hof geht, wurde viel spekuliert. Sicher ist aber, dass sie dort die revolutionären Unruhen erlebt. Schon bald kann sie in Madrid mit einer Gedichtsammlung ans Licht der Öffentlichkeit treten.
+Erste literarische Veröffentlichungen
+Im Frühjahr 1857 veröffentlicht sie La flor (Die Blume). Ihr Erstlingswerk wird von Manuel Murguía in einer Zeitungskritik sehr wohlwollend besprochen und so scheint der Grundstein für eine nicht nur literarische Zusammenarbeit gelegt worden zu sein: Im Juli 1858 veröffentlicht sie den für die Literatur von Frauen wichtigen Text Lieders (sic) und am 10. Oktober des nämlichen Jahres findet die Heirat mit Manuel Murguía statt. Nach dem Umzug der Familie nach Santiago de Compostela bringt Castro dort sieben Monate später, am 12. Mai 1859, ihr erstes von sechs Kindern zur Welt: die Tochter Alejandra.
+
+Ihre ersten Romane: Die Tochter des Meeres und Flavio
+Und noch im gleichen Jahr veröffentlicht Castro in Vigo mit Hilfe ihres Gatten ihren ersten Roman, der das nicht nur das galicische Leben costumbristisch beschreibt, sondern auch die Problematik der Waisenkinder, der alleinstehenden Frauen und der maskulinen Unberechenbarkeit aufnimmt: La hija del mar (Die Tochter des Meeres) steht eine persönlichen Dankwidmung an Murguía voran. 1861 veröffentlicht Castro in Madrid den langen Feuilletonroman Flavio in der Zeitschrift Crónica de ambos mundos (Chronik beider Welten), der bald darauf auch in Buchform erscheint: Die Wankelmütigkeit der Gefühle des Helden führen zu einem desillusionierenden, ja schockierendem Ende. Liebe und Ehre von Mann und Frau werden hier als zwei genderspezifisch gegensätzliche Konstanten der spanischen Gesellschaft im 19. Jahrhundert vorgestellt.
+Literatur und Trauerarbeit
+Nach ihrer Reise mit ihrem Gatten nach Alicante und Murcia veröffentlicht Castro im November 1861 ihr erstes Gedicht auf Galicisch: ¡Adiós qu`eu voume! in der Madrider Zeitschrift El Museo Universal (Das Universalmuseum): Hier thematisiert sie erstmals die Schönheit Galiciens und ihre Liebe zur Heimat. Sie wird schwer krank und kehrt im Dezember zu Mutter und Tochter nach Santiago de Compostela zurück. Der Tod der Mutter im darauf folgenden Jahre (1862) trifft Castro sehr hart. Sie verarbeitet diese Erfahrung literarisch in ihrer 1863 veröffentlichten Gedichtsammlung A Mi Madre (Meiner Mutter).
+Literarischer Erfolg der Galicischen Lieder 
+1863 erscheint auch Rosalía de Castros erste galicische Gedichtsammlung: Cantares Gallegos (Galicische Lieder). An der Veröffentlichung ist maßgeblich Manuel Murguía beteiligt. Er initiierte das Projekt anfänglich ohne das Wissen der Autorin, was zu Zwistigkeiten unter den Eheleuten führt. Castro und Murguía verfolgen verschiedene Absichten mit ihren Schriftstellerischen Tätigkeiten. Die Cantares Gallegos gelten in der Galicischen Literaturgeschichte als Neubeginn der Galicischen Literatur der Neuzeit. Denn seit dem ausklingenden Mittelalter wurde immer weniger auf Galicisch geschrieben. Das ehemalige Prestige des Galicischen als Literatursprache war bis ins 19. Jahrhundert zunehmend verfallen. Castro erweckt durch die Verschriftlichung der oral tradierten Volksliedern (den sogenannten cantigas, cantares oder coplas) in eigenen Variationen das Interesse an der traditionellen Lyrik. Galicische Gedichtsammlungen wie die des mittelalterlichen Königs Alfons des Weisen schlummern zu dieser Zeit noch in Vergessenheit.
+
+Fast vergessene Prosa
+In Ruinas, eine Erzählung, die Castro 1866 in mehreren Folgen wiederum in El Museo Universal veröffentlicht, beschreibt sie mittels dreier Figuren, drei für Galicien typische Charaktere und ihre bewegenden Schicksale.
+Auf dem 1985 in Santiago de Compostela zur Erinnerung an Rosalía de Castros Todestag abgehaltenen Kongress entdeckt die Literaturwissenschaft schließlich auch den Wert Castros Werke in Prosa. Das mag auch ein Grund dafür sein, dass ihr 1867 veröffentlichter Roman El caballero de las botas azules (Der Ritter mit den blauen Stiefeln) 1995 eine moderne Edition erlebt und so wieder von einem breiten spanischsprachigen Publikum rezipiert werden kann. 1881 wird ein Jahr in dem Castro eine ganze Reihe von Texten veröffentlicht. Zusammen in einem Band kommen die Novelle tiefenpsychologischen Charakters El primer loco (Cuento extraño) (Der erste Wahnsinnige (Seltsame Erzählung)) und die costumbristische Erzählung El Domingo de Ramos (Costumbres Gallegas) (Der Palmsonntag (Galicische Sitten)) heraus. Die ökologischen Auswirkungen des Raubbaus am Wald durch die Stahlindustrie stellt Castro mit Padrón y las inundaciones (Padrón und die Überschwemmungen) literarisch in seine sozioökonomischen und historischen Zusammenhänge.
+Die Entstehung der Gedichtsammlung Neue Blätter
+Nach der September-Revolution von 1868 verläßt Castro zusammen mit Murguía Galicien und lebt mit ihm bis 1870 in Simancas. Dort entstehen der Großteil der Gedichte, die sie 1880 in Follas Novas (Neue Blätter) zusammenfasst, ihrer zweiten und letzten Gedichtsammlung auf Galicisch.
+Von 1871 bis 1875 lebt Castro in La Coruña. Nachdem Castro 1872 zum Ehrenmitglied der „Wohltätigkeitsgesellschaft der Galiciengebürtigen auf Havanna” ernannt wird, beginnt sie mit der Publikationsvorbereitung von Follas Novas. 1872 bringt sie auch die erweiterte zweite Auflage der Cantares Gallegos heraus. 
+Literarischer Skandal und Abwendung vom Galicischen 
+Mit der Erwähnung der angeblichen Galicischen Sitte des Beischlafs als Gastgeschenk in Costumbres Gallegas kommt es dann zu einem Skandal um ihre Person und zum Bruch mit den Kulturträgern der Galicischen Renaissance-Bewegung. Im Brief vom 26. Juli 1881 lehnt sie folglich auch Murguías dringliches Bitten entschieden ab, wieder etwas auf Galicisch zu veröffentlichen. Sie wird sich ihrer Haltung zum zu ihrem Tode im Jahre 1885 treu bleiben.
+Spätes Hauprwerk: Der Gedichtband An den Ufern des Sar
+Als bedeutendstes lyrisches Werk Castros in kastilischer Sprache gilt die 1884 veröffentlichte Gedichtsammlung En las orillas del Sar. Sie wird sprachlich als wegweisend für die Moderne Lyrik angesehen. Da En las orillas del Sar als Castros Hauptwerk angesehen wird, fand es in An den Ufern des Sar auch eine deutsche Übersetzung.
+Tod und Nationalsymbol
+Als Rosalía de Castro am 15. Juli 1885 in dem kleinen Ort Padrón bei Santiago de Compostela stirbt, verliert Galicien an diesem Tage seine innovativste Dichterin. Die Bewunderung für ihre Veröffentlichungen auf Galicisch haben zur Stilisierung Castros zum Nationalsymbol, zur Mutter der Nation geführt. 
+
+Literarische Wirkung
+Azorin, Antonio Machado, Miguel de Unamuno, allesamt Dichter der sogenannten Generation von 98 und somit Modernisten, haben Rosalía de Castro für das 20. Jahrhundert wiederentdeckt. Dabei ist es besonders die Direktheit ihrer Sprache, ihr Existentialismus und die ewigen Themen der Menschheit: Liebe und Enttäuschung, Leben und Tod, kurz, das Fragen nach dem Sinn des Lebens, was die Autoren an Rosalía de Castros Schriften, und besonders an En las orillas del Sar fasziniert.
+Der auch in Deutschland bekannte andalusische Dichter Federico García Lorca (1898-1936) entdeckt für sich auch die Galicische Lyrik Rosalía de Castros und wird durch ihre galicischen Verse inspiriert. Der Andalusier veröffentlicht einen kleinen Gedichtband auf Galicisch mit dem Titel Seis poemas gallegos (Sechs Galicische Gedichte), die er zwischen 1932 und 1934 schreibt. Das Widmungsgedicht “Canzón de cuna pra Rosalía Castro, morta” (Wiegenlied für die tote Rosalía Castro) ist das Ergebnis einer seiner Galicienreisen im Jahre 1932. In dem Gedicht spielt Lorca auf die Galicische Geschichte an, stellt ihr das Bild die Pilgerfahrt nach Santiago de Compostela gegenüber und verbindet dies mit seiner eigenen Pilgerreise an das Grab Rosalía de Castros.
+
+
+
+
+
+Werk
+Ob als Romanautorin oder Lyrikerin, auf Spanisch oder Galicisch, Rosalía de Castros Werk nimmt einen wichtigen Platz in der spanischsprachigen und galicischen Literatur des 19. Jahrhunderts ein und obwohl sie schon 1885 gestorben ist, gilt sie doch als eine Wegbereiterin der Moderne. Ihre feministischen Manifeste (“Lieders” – Lieder und “Las literatas” – Die Literatinnen), ihr fortschrittliches sozial-politisches Denken (Follas novas – Junge Blätter, El caballero de las botas azules – Der blaugestiefelte Ritter) oder ihre dezidierte kritische Haltung gegenüber den Ungerechtigkeiten ihrer Zeit in En las orillas del Sar – An den Ufern des Sar), die im Übrigen aber ihr gesamtes Werk durchzieht, machen sie zu einer Schriftstellerin, die ihrer Zeit weit voraus gewesen ist und Leserinnen und Leser seit mehr als 150 Jahren immer wieder in ihren Bann schlägt. So werden ihre Werke in Spanien und Galicien bis heute nicht nur gelesen, rezitiert oder nachgeahmt, sondern erleben auch mannigfaltige musikalische oder kineastische Interpretationen. Kein Jahrestag wird vergessen, so dass schließlich Rosalía selbst zu einem literarischen Thema geworden ist. Mit ihrem ihrem einzigartigen sprachlichen Subjektivismus und besonderen Schreibstrategien gelingt es ihr, einen Pakt mit den Lesern herzustellen, um die in der Wirklichkeit existierenden Übel zu verringern und gleichzeitig die Sprachkunst soweit zu modernisieren, dass Romantik und Realismus überwunden werden. Der Galicierin gelingt dies obwohl oder gerade weil, sie eine einzigartige Sensibilität für die komplexen politischen, sozioökonomischen und kulturellen Konflikte ihrer abgründigen Zeit besitzt und sie sich immer in diejenigen hat einfühlen können, welche von der Gesellschaft benachteiligt worden sind. Die von ihr berührten Themen weisen dabei immer wieder eine erschreckende Aktualität auf.
+Andererseits steht Rosalía de Castro wie keine andere Autorin und kein anderer Autor ihrer Zeit quasi als Symbol und Kristallisationspunkt für die „Wiederauferstehung“ der modernen, zeitgenössischen Galicischen Literatur, einer Literatur, die seit dem ausklingenden Mittelalter aus dem kollektiven Bewusstsein der Galicier gedrängt werden sollte. Als 1863 ihr Gedichtband Cantares gallegos – Galicische Lieder unter der Federführung ihres Ehegatten Manuel Murguía veröffentlicht wird, mag es im Rückblick so erscheinen als habe sich die Galicischen Literatur wie ein Phönix aus der Asche erhoben. Tatsächlich hat Galicien niemals seine Sprache vergessen. Aber Cantares gallegos ist der erste, vollständig in der Landessprache verfasste Gedichtband, welcher, weit entfernt von bloßer Heimatliteratur, aufgrund seiner poetischen Strahlkraft eine Schlüsselstellung für das moderne galicischen Nationalbewusstsein einnimmt, denn Rosalías Lyrik ist ein Spiegel der galicischen Gesellschaft, in dem sich die Galicierinnen und Galicier bis heute wiederfinden können; die Galicischen Liederkondensieren somit das, was man als die Seele Galiciens bezeichnen könnte. Als ob dies nicht schon komplex genug sei, erweitert Rosalía de Castro im zweiten und letzten Gedichtband auf Galicisch, Follas novas – Junge Blätter, ihr literarisches Konzept um existentialistische und dekonstruktivistische Ebenen, was die unzweifelhafte literarische Durchsetzungskraft des Galicischen und seiner Autorin beweist. An dieses erweiterte Konzept schließt ihre letzte zu Lebzeiten erschienene, auf spanisch verfasste Gedichtsammlung nahtlos an, weshalb En las orillas del Sar als ihr spanischsprachiges lyrisches Hauptwerk des 19. Jahrhunderts in die Literaturgeschichte eingegangen ist. Immer ist es aber Galicien, -seine Menschen, seine Natur, seine sozioökonomische Wirklichkeit-, um das sich Rosalía sorgt.</p>
+
+    <div style="float: right; margin-left: 20px; margin-bottom: 10px; width: 232px;">
+
+      <figure style="margin: 0;">
+
+        <img src="images/rosalia-232x300.jpg" alt="Rosalía de Castro Porträt" width="232" height="300" style="display: block; border: 1px solid #ccc;">
+
+        <figcaption style="font-size: 0.9em; color: #666; font-style: italic; text-align: right; margin-top: 5px;">
+
+          Rosalía de Castro: Bearbeitung nach dem Foto von Luis Sellier, wahrscheinlich um 1880 (PD). By Luis Sellier [Public domain], via Wikimedia Commons
+
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  <p>Rosalía de Castro ist eine der faszinierendsten Gestalten der spanischen Literaturgeschichte, 
+
+    die auch im deutschsprachigen Raum eine immer größere Bedeutung erlangt hat. 
+
+    So kann erfreulicherweise festgestellt werden, dass es häufig die Pilger auf dem Jakobsweg 
+
+    sind, die auf ihrer Reise nach Santiago de Compostela auch der galicischen Autorin 
+
+    begegnen und dann gern über diese großartige Dichterin schreiben.</p>
+
+  <p>Rosalía de Castros Leben und Werk sollte im deutschen Sprachraum tatsächlich noch viel prominenter sein. 
+
+    Diese Seite soll die Gelegenheit bieten, sich über Rosalía de Castro näher zu informieren.</p>
+
+  <p>Die Besucher können hier nicht nur Rosalías Gedichte und Romane kennenlernen, sondern auch einen Überblick 
+
+    über die deutschsprachige Rosalía-Literatur sowie biografische Angaben zu Rosalía de Castro auf Deutsch finden. 
+
+    Ein besonderes Augenmerk wird auf die deutschen Übersetzungen gelegt, von denen es mittlerweile immer mehr gibt.</p>
+
+  <p>Ich selbst habe bereits ihre ersten beiden Romane, zwei Gedichtsammlungen und einige kurze Texte sowie ihr Hauptwerk 
+
+    "Cantares Gallegos" (dt. Galicische Lieder) übersetzt.</p>
+
+  <p>Die Veröffentlichung des fünften Bandes meiner Werkausgabe in deutscher Übersetzung ist in Vorbereitung!</p>
+
+  <p>Literatur lebt nur, wenn sie auch gelesen und über sie geredet oder geschrieben wird.</p>
+
+  <p>Auf rosaliadecastro.de sollen die Besucher die Möglichkeit bekommen, in den entsprechenden Bereichen zu Rosalía de Castros 
+
+    Leben und Schreiben eigene Kommentare oder auch Beiträge zu verfassen.</p>
+
+    <div class="search">
+
+      <form action="#" method="get">
+
+        <label for="search">Suche nach:</label><br />
+
+        <input type="text" id="search" name="search" />
+
+        <input type="submit" value="Suchen" />
+
+      </form>
+
+    </div>
+
   </main>
-  <footer>…</footer>
+
+</div>
+
+<footer>
+
+  <p>&copy; 2025 rosaliadecastro.de</p>
+
+  <p>
+
+    <a href="#">Impressum</a> |
+
+    <a href="#">Disclaimer</a>
+
+  </p>
+
+</footer>
+
 </body>
+
 </html>
